@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="icon" href="ICO.png">
+    <title>Timeline - Mateusz Dymowski Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #303b3d,#303b3d);
+            color: #fff;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .moving-bg {
+            background: linear-gradient(45deg, #000000, #61616a, #fefeff);
+            background-size: 400% 400%;
+            animation: gradientBG 7s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h1, h2 {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #FFD700;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            margin-left: -3px;
+        }
+        .timeline-item {
+            width: calc(100% - 100px);
+            padding-left: 70px;
+            padding-right: 25px;
+            position: relative;
+            background-color: inherit;
+            margin-bottom: 50px; /* Increased spacing between items */
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            left: 33px;
+            background-color: #FFD700;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .content {
+            padding: 20px 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            border-radius: 6px;
+        }
+        .content::before {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent rgba(255, 255, 255, 0.8) transparent transparent;
+            left: -10px;
+            top: 10px;
+        }
+        .nav-button {
+            background-color: #051f14;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-button:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body class="moving-bg">
+    <header>
+        <h1>Timeline - Mateusz Dymowski</h1>
+        <a href="index.html" class="nav-button">Back to Main Page</a>
+    </header>
+    <main>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="content">
+                    <h2>Sierpień 2024</h2>
+                    <p>Zakup 1 aparatu potograficznego.Pierwsze zdjęcia</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="content">
+                    <h2>>Wrzesień 2024</h2>
+                    <p>Pączątek Kodowania strony portfolio / Pójście do szkoły o profilu technik informatyk.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="content">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="content">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="content">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="content">
+                    <h2</h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="content">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="content">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="content">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

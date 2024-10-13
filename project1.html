@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt 1 - Portfolio Mateusz Dymowski</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #303b3d,#303b3d);
+            color: #fff;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 0.9em;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            background-color: #FFD700;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 15px;
+            color: #333;
+            margin-top: 0;
+        }
+        .moving-bg {
+            background: linear-gradient(45deg, #000000, #61616a, #fefeff);
+            background-size: 400% 400%;
+            animation: gradientBG 7s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #303b3d,#303b3d);
+            color: #fff;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+        }
+        .nav-box {
+            display: flex;
+            gap: 1rem;
+        }
+        .nav-button {
+            background-color: #051f14;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .nav-button:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .project-link {
+            display: inline-block;
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #303b3d;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, border 0.3s ease;
+            border: 2px solid #FFD700;
+        }
+        .project-link:hover {
+            background-color: #4a5c5f;
+            border-color: #FFA500;
+        }
+    .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .project-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .link-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+</style>
+
+    </style>
+</head>
+<body class="moving-bg">
+    <header>
+        <div>
+            <h1>Projekt 1 - Portfolio Mateusz Dymowski</h1>
+            <p>Szczegółowy opis projektu IT</p>
+        </div>
+        <div class="nav-box">
+            <button class="nav-button" onclick="location.href='index.html'">Strona główna</button>
+        </div>
+    </header>
+    <main>
+        <section id="project-details">
+            <h2>Prosta strona logowania</h2>
+            <h3>Strona do logowania /rejestrowania się</h3>
+            <h3>Funkcjonalności</h3>
+            <ul>
+                <li>Możliwość podłączenia baz danych  takich jak : php, mysql itp.</li>
+                <li>Łatwa konfiguracja </li>
+                <li>Można szybko i łatwo zmienić styl strony</li>
+            </ul>
+            <div class="project-links">
+                <a href="pr1/index.html" class="project-link">
+                    <img src="assets/LV.png" alt="Live demo icon" class="link-icon">
+                    Zobacz live demo
+                </a>
+                <a href="#" class="project-link">
+                    <img src="assets/GH.png" alt="GitHub icon" class="link-icon">
+                    Repozytorium GitHub
+                </a>
+            </div>            
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Portfolio Mateusz Dymowski. Wszelkie prawa zastrzeżone.</p>
+        <p>Stworzone z pasją i kreatywnością</p>
+    </footer>
+</body>
+</html>
