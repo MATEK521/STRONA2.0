@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="icon" href="ICO.png">
+    <title>Portfolio Mateusz Dymowski</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;                 /*Autor kodu - Mateusz Dymowski */
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #303b3d,#303b3d);
+            color: #fff;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 0.9em;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        section {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1, h2 {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h2 {
+            background-color: #FFD700;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 15px;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .moving-bg {
+            background: linear-gradient(45deg, #000000, #61616a, #fefeff);
+            background-size: 400% 400%;
+            animation: gradientBG 7s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #303b3d,#303b3d);
+            color: #fff;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+        }
+
+        .nav-box {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-button {
+            background-color: #051f14;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .nav-button:hover {
+            background-color: #ffffff;
+            color: #000000;             /*Autor kodu - Mateusz Dymowski */
+        }
+        .project-link {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #303b3d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    border: 2px solid #FFD700;  /*zolty border*/
+}
+
+.project-link:hover {
+    background-color: #4a5c5f;
+    border-color: #FFA500;  /*zmienny kolor po najechaniu */
+}
+.program-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.program-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.equipment-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.equipment-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+
+.equipment-info {
+    flex: 1;
+}
+
+.equipment-info h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.equipment-info p {
+    margin-bottom: 1rem;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body class="moving-bg">
+    <header>
+        <div>
+            <h1>Portfolio Fotograficzne/IT</h1>
+            <p>Rzeczy niemożliwe tworzę od ręki, na cuda trzeba trochę poczekać</p>
+        </div>
+        <div class="nav-box">
+            <button class="nav-button" data-target="#about"> O mnie</button>
+            <button class="nav-button" data-target="#portfolio">Portfolio</button>
+            <button class="nav-button" data-target="#programs">Programy</button>
+            <button class="nav-button" data-target="#sprzet">Sprzęt</button>
+            <button class="nav-button" data-target="#contact">Kontakt</button>
+            <a href="timeline.html" class="nav-button">Linia czasu</a>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>O mnie</h2>
+            <h3>Hmm...Może coś na początek?</h3>
+            <p>No dobrze, zacznijmy od tego, że mam na imię Mateusz. 😊 Jestem pełen energii i zawsze gotowy do działania. Moja pasja do fotografii i WebDevelopingu jest nieograniczona! Uwielbiam odkrywać nowe sposoby na uchwycenie piękna świata i tworzenie innowacyjnych stron internetowych..</p>
+            <h3>Ah tak, a więc...</h3>
+            <p>...jestem prawdziwym entuzjastą nowych technologii. Moje umiejętności informatyczne rozwijam w szkole o profilu technik informatyk, co pozwala mi na ciągłe poszerzanie wiedzy i doskonalenie swoich umiejętności.💻</p>
+            <h3>Coś jeszcze?</h3>
+            <p>Oczywiście! Jestem osobą otwartą i towarzyską. Moja dobroć i empatia sprawiają, że ludzie czują się w moim towarzystwie komfortowo.😊 Zawsze chętnie słucham i pomagam innym.😎 </p>
+            <h3>Hmm... Może jeszcze coś o moich pasjach?</h3>
+            <p>Moje hobby to nie tylko fotografia i WebDeveloping.👌 Uwielbiam podróżować i poznawać nowe kultury. Cenię sobie także spędzanie czasu z przyjaciółmi i rodziną.😁</p>
+            <h3>No dobrze, a więc..</h3>
+            <p>..w wolnym czasie lubię oglądać filmy i słuchać muzyki.🙉 Jestem osobą otwartą na nowe doświadczenia i zawsze chętnie poznaję coś nowego😜</p>
+            <h3>I na koniec..</h3>
+            <p>..jestem pełen optymizmu i wiary w siebie.👌 Wierzę, że wszystko jest możliwe, jeśli tylko się tego chce.😏 Moja pasja i determinacja są moimi największymi atutami.😉            </p>
+            <img src="assets/PFP.png" alt="avatar">
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <h3>Fotograficzne</h3>
+            <div class="gallery">
+                <a href="https://example.com/nature"><img src="assets/zdjecia/Zdjecie1.jpg" alt="Nature shot"></a>
+                <a href="https://example.com/portrait"><img src="assets/zdjecia/Zdjecie2.jpg" alt="Portrait"></a>
+                <a href="https://example.com/landscape"><img src="assets/zdjecia/Zdjecie3.jpg" alt="Landscape"></a>
+                <a href="https://example.com/urban"><img src="assets/zdjecia/Zdjecie4.jpg" alt="Urban photography"></a>
+                <a href="https://example.com/wildlife"><img src="assets/zdjecia/Zdjecie5.jpg" alt="Wildlife"></a>
+                <a href="https://example.com/event"><img src="assets/zdjecia/Zdjecie6.jpg" alt="Event photography"></a>
+                <a href="https://example.com/macro"><img src="assets/zdjecia/Zdjecie7.jpg" alt="Macro photography"></a>
+                <a href="https://example.com/street"><img src="assets/zdjecia/Zdjecie8.jpg" alt="Street photography"></a>
+                <a href="https://example.com/architecture"><img src="https://via.placeholder.com/1600x900" alt="Architecture"></a>
+                <a href="https://example.com/food"><img src="https://via.placeholder.com/1600x900" alt="Food photography"></a>
+                <a href="https://example.com/travel"><img src="https://via.placeholder.com/1600x900" alt="Travel photography"></a>
+                <a href="https://example.com/fashion"><img src="https://via.placeholder.com/1600x900" alt="Fashion photography"></a>
+                <a href="https://example.com/street"><img src="https://via.placeholder.com/1600x900" alt="Street photography"></a>
+                <a href="https://example.com/architecture"><img src="https://via.placeholder.com/1600x900" alt="Architecture"></a>
+                <a href="https://example.com/food"><img src="https://via.placeholder.com/1600x900" alt="Food photography"></a>
+                <a href="https://example.com/travel"><img src="https://via.placeholder.com/1600x900" alt="Travel photography"></a>
+                <a href="https://example.com/fashion"><img src="https://via.placeholder.com/1600x900" alt="Fashion photography"></a>
+                <a href="https://example.com/street"><img src="https://via.placeholder.com/1600x900" alt="Street photography"></a>
+                <a href="https://example.com/architecture"><img src="https://via.placeholder.com/1600x900" alt="Architecture"></a>
+                <a href="https://example.com/food"><img src="https://via.placeholder.com/1600x900" alt="Food photography"></a>
+            </div>
+            <h3>IT/Webdevelopmenckie</h3>
+            <div class="project-gallery">
+                <div class="project-card">
+                    <h4>Projekt strony logowania 1</h4>
+                    <img src="assets/projekt1.png" alt="Project 1">
+                    <p>Zobacz więcej informacji o projekcie</p>
+                    <a href="project1.html" class="project-link">Zobacz projekt</a>
+                </div>
+                <div class="project-card">
+                    <h4>Project 2</h4>
+                    <img src="" alt="Project 2">
+                    <p>opis</p>
+                    <a href="#" class="project-link">Zobacz projekt</a>
+                </div>
+                <div class="project-card">
+                    <h4>Project 3</h4>
+                    <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                    <p>opist</p>
+                    <a href="#" class="project-link">Zobacz projekt</a>
+                </div>
+            </div>            
+        </section>
+        <section id="programs">
+            <h2>Programy, których używam </h2>
+            <h3>Do obróbki zdjęć</h3>
+            <div class="program-item">
+                <img src="assets/PS.png" alt="Adobe Photoshop icon" class="program-icon">
+                <a href="https://www.adobe.com/pl/products/photoshop/landpa.html?mv=search&mv2=paidsearch&sdid=2XBSBWBF&ef_id=48ba1fab7a8d141dc5b078a1b3abd8da:G:s&s_kwcid=AL!3085!10!79439869226366!79440156740937&msclkid=48ba1fab7a8d141dc5b078a1b3abd8da" class="project-link">Adobe Photoshop</a>
+            </div>
+            <div class="program-item">
+                <img src="assets/LR.png" alt="Lightroom icon" class="program-icon">
+                <a href="https://www.adobe.com/pl/products/photoshop-lightroom/campaign/pricing.html?mv=search&mv2=paidsearch&sdid=3JZYB8N8&ef_id=df6780643a8a1c9a4d4be76ef38ec2e4:G:s&s_kwcid=AL!3085!10!79783520142256!79783752372711&msclkid=df6780643a8a1c9a4d4be76ef38ec2e4" class="project-link">Lightroom</a>
+            </div>
+            <h3>Do programowania stron</h3>
+            <div class="program-item">
+                <img src="assets/VSC.png" alt="Visual Studio Code icon" class="program-icon">
+                <a href="https://code.visualstudio.com/" class="project-link">Visual Studio Code</a>
+            </div>
+            <div class="program-item">
+                <img src="assets/GH.png" alt="GitHub Desktop icon" class="program-icon">
+                <a href="https://github.com" class="project-link">GitHub Desktop</a>
+            </div>
+        </section> 
+        <section id="sprzet">
+            <h2>Sprzęt fotograficzny</h2>
+            <div class="equipment-item">
+                <img src="assets/DSLR.png" alt="Camera icon" class="equipment-icon">
+                <div class="equipment-info">
+                    <h4>DSLR [Aparat lusterkowy]</h4>
+                    <p>Sony DSLR Alpha a330.</p>
+                    <a href="https://www.optyczne.pl/920-Sony_Alpha_DSLR-A330-specyfikacja_aparatu.html" class="project-link">Więcej informacji</a>
+                </div>
+            </div>
+            <div class="equipment-item">
+                <img src="assets/CL2.png" alt="Telephoto Lens icon" class="equipment-icon">
+                <div class="equipment-info">
+                    <h4>Obiektyw 18-55mm</h4>
+                    <p>Krótki opis obiektywu i jego możliwości.</p>
+                    <a href="https://www.optyczne.pl/861-Sony_DT_18-55_mm_f_3.5-5.6_SAM-specyfikacja_obiektywu.html" class="project-link">Więcej informacji</a>
+                </div>
+            </div>
+            <div class="equipment-item">
+                <img src="assets/CL3.png" alt="Macro Lens icon" class="equipment-icon">
+                <div class="equipment-info">
+                    <h4>Obiektyw 55-200mm</h4>
+                    <p>Krótki opis obiektywu i jego specyfikacji.</p>
+                    <a href="https://www.optyczne.pl/860-Sony_DT_55-200_mm_f_4-5.6_SAM-specyfikacja_obiektywu.html" class="project-link">Więcej informacji</a>
+                </div>
+            </div>            
+            </div>
+            <div class="equipment-item">
+                <img src="assets/TP.png" alt="Tripod icon" class="equipment-icon">
+                <div class="equipment-info">
+                    <h4>Tripod</h4>
+                    <p>Krótki opis Tripodu.</p>
+                    <a href="https://allegro.pl/oferta/statyw-tripod-mini-2-5kg-do-canon-sony-nikon-fuji-11966788342?bi_s=ads&bi_m=leftpanel&bi_c=MDJjMjQ0MjctNDFiOS00MzU0LWEwODAtNTUwN2EyYTAyN2U1AA&bi_t=ape&referrer=proxy&emission_unit_id=d5d45abc-f51e-45a7-852c-dd12a57d2980" class="project-link">Więcej informacji</a>
+                </div>
+            </div>
+        </section>        
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <h3>Skontaktuj się ze mną</h3>
+            <div class="contact-item">
+                <img src="assets/EM.png" alt="Email icon" class="contact-icon">
+                <a href="mailto:XXX@example.com" class="project-link">E-Mail</a>
+            </div>
+            <div class="contact-item">
+                <img src="assets/IG.png" alt="Instagram icon" class="contact-icon">
+                <a href="https://www.instagram.com/m4t3k_33/" target="_blank" class="project-link">Instagram</a>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>© 2024 Mateusz Dymowski. Wszelkie prawa zastrzeżone.</p>
+        <p>Stworzone z pasją i kreatywnością</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = document.querySelector(this.dataset.target);
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
